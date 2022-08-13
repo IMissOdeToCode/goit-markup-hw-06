@@ -402,6 +402,18 @@
 						</li>
 					</ul>
 				</div>
+
+				<!-- subscribe -->
+				<div class="sub-box">
+					<p class="sub-text">Підпишіться на розсилку</p>
+					<form class="sub-form js-speaker-form">
+						<div class="sub-field">
+							<input class="sub-input" type="text" name="user-name" id="user-name" placeholder=" " />
+							<label class="sub-label" for="user-name">E-mail</label>
+						</div>
+						<button class="button sub-button" type="submit">Підписатися</button>
+					</form>
+				</div>
 			</div>
 		</footer>
 
@@ -425,5 +437,15 @@
 
 		<!--  -->
 		<script src="./js/modal.js"></script>
+
+		<script>
+			(() => {
+				document.querySelector(".js-speaker-form").addEventListener("submit", e => {
+					e.preventDefault();
+
+					new FormData(e.currentTarget).forEach((value, name) => console.log(`${name}: ${value}`));
+				});
+			})();
+		</script>
 	</body>
 </html>
